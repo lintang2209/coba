@@ -9,13 +9,13 @@ USE_MODEL = "YOLO"  # "CNN" atau "YOLO"
 # ==== LOAD MODEL ====
 if USE_MODEL == "CNN":
     import tensorflow as tf
-    MODEL_PATH = "cnn_soybean_rust.keras"
+    MODEL_PATH = "models/cnn_soybean_rust.keras"
     cnn_model = tf.keras.models.load_model(MODEL_PATH)
     class_names = ["Daun Sehat", "Soybean Rust"]
 
 elif USE_MODEL == "YOLO":
     from ultralytics import YOLO
-    MODEL_PATH = "yolov8_soybean_rust.pt"
+    MODEL_PATH = "models/best.pt"
     yolo_model = YOLO(MODEL_PATH)
 
 # ==== UI ====
