@@ -4,74 +4,63 @@ from PIL import Image
 import os
 import tensorflow as tf
 from ultralytics import YOLO
-import base64
 
 # ====================
-# Fungsi untuk load image jadi base64
+# CSS Styling dengan URL daun online
 # ====================
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, "rb") as f:
-        data = f.read()
-    return base64.b64encode(f.read()).decode()
-
-# Load daun sebagai background (lokal)
-leaf_top = get_base64_of_bin_file("images/bg_streamlit.png")
-# ====================
-# CSS Styling
-# ====================
-st.markdown(f"""
+st.markdown("""
     <style>
-        .main {{
+        .main {
             background-color: #f9fafb;
-        }}
+        }
 
         /* Daun kiri atas */
-        body::before {{
+        body::before {
             content: "";
             position: absolute;
             top: -30px;
             left: -50px;
             width: 250px;
             height: 250px;
-            background: url("data:image/png;base64,{leaf_top}") no-repeat;
+            background: url("https://i.ibb.co/X8hgYg0/leaf-top.png") no-repeat;
             background-size: contain;
             transform: rotate(20deg);
             z-index: -1;
-        }}
+        }
 
         /* Daun kanan bawah */
-        body::after {{
+        body::after {
             content: "";
             position: absolute;
             bottom: -30px;
             right: -50px;
             width: 250px;
             height: 250px;
-            background: url("data:image/png;base64,{leaf_bottom}") no-repeat;
+            background: url("https://i.ibb.co/Z2ShYDC/leaf-bottom.png") no-repeat;
             background-size: contain;
             transform: rotate(-15deg);
             z-index: -1;
-        }}
+        }
 
-        .center {{
+        .center {
             text-align: center;
             padding-top: 120px;
-        }}
+        }
 
-        .title {{
+        .title {
             font-size: 36px;
             font-weight: 700;
             color: #4b8b64;
-        }}
+        }
 
-        .subtitle {{
+        .subtitle {
             font-size: 16px;
             font-style: italic;
             color: #7d7d7d;
             margin-top: -10px;
-        }}
+        }
 
-        .stButton>button {{
+        .stButton>button {
             background-color: #f0f0f0;
             color: #4b8b64;
             border-radius: 20px;
@@ -80,11 +69,11 @@ st.markdown(f"""
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
-        }}
-        .stButton>button:hover {{
+        }
+        .stButton>button:hover {
             background-color: #4b8b64;
             color: white;
-        }}
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -187,7 +176,6 @@ elif st.session_state.page == "deteksi":
                 if len(results[0].boxes) > 0:
                     st.write("#### Detail Deteksi:")
                     for box in results[0].boxes:
-                        cls_id = int(box.cls[0])
                         conf = float(box.conf[0])
                         st.write(f"- Ditemukan **Penyakit Soybean Rust** dengan confidence **{conf:.2f}**")
                 else:
