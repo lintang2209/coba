@@ -3,4 +3,3 @@ tensorflow==2.16.1
 ultralytics==8.2.33
 numpy==1.26.4
 pillow==10.3.0
-keras-core==0.1.7 # Tambahkan baris ini
