@@ -15,9 +15,7 @@ def get_base64_of_bin_file(bin_file):
     return base64.b64encode(f.read()).decode()
 
 # Load daun sebagai background (lokal)
-leaf_top = get_base64_of_bin_file("images/leaf_top.png")
-leaf_bottom = get_base64_of_bin_file("images/leaf_bottom.png")
-
+leaf_top = get_base64_of_bin_file("images/bg streamlit.png")
 # ====================
 # CSS Styling
 # ====================
