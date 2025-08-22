@@ -12,7 +12,7 @@ st.write("Unggah satu gambar daun kedelai untuk melihat hasil deteksi dari kedua
 # ==== LOAD MODEL DENGAN CACHING ====
 @st.cache_resource
 def load_cnn_model():
-    MODEL_PATH = "models/cnn_soybean_rust.keras"
+    MODEL_PATH = "models/cnn_soybean_rust_new.h5"
     if not os.path.exists(MODEL_PATH):
         st.error(f"File model CNN tidak ditemukan: {MODEL_PATH}")
         return None
