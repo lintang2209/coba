@@ -12,13 +12,13 @@ st.write("Upload gambar daun kedelai untuk deteksi penyakit Soybean Rust.")
 # ==== LOAD MODEL DENGAN CACHING ====
 @st.cache_resource
 def load_cnn_model():
-    MODEL_PATH = "cnn_soybean_rust.keras"
+    MODEL_PATH = "models/cnn_soybean_rust.keras"
     model = tf.keras.models.load_model(MODEL_PATH)
     return model
 
 @st.cache_resource
 def load_yolo_model():
-    MODEL_PATH = "yolov8_soybean_rust.pt"
+    MODEL_PATH = "models/best.pt"
     model = YOLO(MODEL_PATH)
     return model
 
