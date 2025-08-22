@@ -1,3 +1,7 @@
 streamlit
-pillow
-numpy
+tensorflow==2.16.1
+torch==2.2.2
+ultralytics==8.3.183
+opencv-python-headless==4.9.0.80
+pillow==10.3.0
+numpy==1.26.4
