@@ -22,7 +22,7 @@ st.markdown("""
             left: -50px;
             width: 250px;
             height: 250px;
-            background: url("https://i.ibb.co/X8hgYg0/leaf-top.png") no-repeat;
+            background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.piqsels.com%2Fid%2Fpublic-domain-photo-siimx&psig=AOvVaw3RhuCGbjSlLn9fGVkNReX6&ust=1755967082523000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMif0IDtno8DFQAAAAAdAAAAABAE") no-repeat;
             background-size: contain;
             transform: rotate(20deg);
             z-index: -1;
